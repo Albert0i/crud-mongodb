@@ -1,0 +1,59 @@
+### Get all topics
+GET http://localhost:3000/api/topics
+Content-Type: application/json
+
+### Create new topic
+POST http://localhost:3000/api/topics
+Content-Type: application/json
+
+{
+  "title": "HTML", 
+  "description": "Markup language for websites"
+}
+
+###
+POST http://localhost:3000/api/topics
+Content-Type: application/json
+
+{
+  "title": "CSS", 
+  "description": "Cascading style sheet"
+}
+
+###
+POST http://localhost:3000/api/topics
+Content-Type: application/json
+
+{
+  "title": "React JS", 
+  "description": "A javascript framework"
+}
+
+
+
+### Get a topic
+GET http://localhost:3000/api/topics/649a901a2b9e6a9d31c5a45c
+Content-Type: application/json
+
+
+### Update a topic 
+PUT http://localhost:3000/api/topics/649a8e0a2b9e6a9d31c5a454
+Content-Type: application/json
+
+{
+  "newTitle": "CSS updated", 
+  "newDescription": "Cascading style sheet updated"
+}
+
+
+### Delete a topic  
+DELETE http://localhost:3000/api/topics?id=649a66eb67467ed19be5e837
+
+### 
+DELETE http://localhost:3000/api/topics/649a684967467ed19be5e83a
+
+
+# 
+# REST Client for Visual Studio Code
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+#
