@@ -1,22 +1,23 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
+import { getTopics } from '@/actions/topicServerAction'
 
-const getTopics = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/topics", {
-      cache: "no-store",
-    });
+// const getTopics = async () => {
+//   try {
+//     const res = await fetch("http://localhost:3000/api/topics", {
+//       cache: "no-store",
+//     });
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch topics");
-    }
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch topics");
+//     }
 
-    return res.json();
-  } catch (error) {
-    console.log("Error loading topics: ", error);
-  }
-};
+//     return res.json();
+//   } catch (error) {
+//     console.log("Error loading topics: ", error);
+//   }
+// };
 
 export default async function TopicsList() {
   const { topics } = await getTopics();
@@ -26,10 +27,10 @@ export default async function TopicsList() {
       {topics.map((t) => (
         <div
           key={t._id}
-          className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
+          className="flex items-start justify-between gap-5 p-4 my-3 border border-slate-300"
         >
           <div>
-            <h2 className="font-bold text-2xl">{t.title}</h2>
+            <h2 className="text-2xl font-bold">{t.title}</h2>
             <div>{t.description}</div>
           </div>
 

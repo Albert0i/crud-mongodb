@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { addTopic } from '@/actions/topicServerAction'
 
 export default function AddTopic() {
   const [title, setTitle] = useState("");
@@ -16,26 +17,32 @@ export default function AddTopic() {
       alert("Title and description are required.");
       return;
     }
+    //   try {
+    //     const res = await fetch("http://localhost:3000/api/topics", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-type": "application/json",
+    //       },
+    //       body: JSON.stringify({ title, description }),
+    //     });
 
-    try {
-      const res = await fetch("http://localhost:3000/api/topics", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ title, description }),
-      });
-
-      if (res.ok) {
-        router.push("/");
-      } else {
-        throw new Error("Failed to create a topic");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+    //     if (res.ok) {
+    //       router.push("/");
+    //     } else {
+    //       throw new Error("Failed to create a topic");
+    //     }
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // };
+    addTopic(title, description)      
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        router.push('/')
+      })
+      .catch(err => console.log(err)) 
+  }
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
