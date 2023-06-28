@@ -49,7 +49,7 @@ export const addTopic = async (title, description) => {
         });
 
         //console.log(res)
-        return { ok: res.ok, status: res.status }
+        return res.json()
       } catch (error) {
         console.log(error);
       }
@@ -68,7 +68,7 @@ export const updateTopic = async (id, newTitle, newDescription) => {
       });
 
       //console.log(res)
-      return { ok: res.ok, status: res.status }
+      return res.json()
     } catch (error) {
       console.log(error);
     }
@@ -78,12 +78,15 @@ export const deleteTopic = async (id) => {
     console.log('deleteTopic Server Action')
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
+      // const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
+      //   method: "DELETE",
+      // });
+      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
         method: "DELETE",
       });
 
-        //console.log(res)
-        return { ok: res.ok, status: res.status }
+      //console.log(res)
+      return res.json()
     } catch (error) {
       console.log(error);
     }      
