@@ -1,5 +1,6 @@
 
 export const getTopics = async () => {
+    console.log('getTopics server action')
     try {
       const res = await fetch("http://localhost:3000/api/topics", {
         cache: "no-store",
@@ -16,6 +17,7 @@ export const getTopics = async () => {
   };
 
 export const addTopic = async (title, description) => {
+    console.log('addTopic server action')
     try {
         const res = await fetch("http://localhost:3000/api/topics", {
           method: "POST",
@@ -37,6 +39,7 @@ export const addTopic = async (title, description) => {
 }
 
 export const updateTopic = async (id, newTitle, newDescription) => {
+  console.log('updateTopic server action')
   try {
     const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
       method: "PUT",
@@ -59,6 +62,7 @@ export const updateTopic = async (id, newTitle, newDescription) => {
 }
 
 export const deleteTopic = async (id) => {
+  console.log('deleteTopic server action')
   try {
     const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
       method: "DELETE",

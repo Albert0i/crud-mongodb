@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { addTopic } from '@/actions/topicServerAction'
 
-export default function AddTopic() {
+export default function AddTopicForm({ addTopic }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -13,37 +12,34 @@ export default function AddTopic() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !description) {
-      alert("Title and description are required.");
-      return;
-    }
-    //   try {
-    //     const res = await fetch("http://localhost:3000/api/topics", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-type": "application/json",
-    //       },
-    //       body: JSON.stringify({ title, description }),
-    //     });
+    // try {
+    //   const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+    //     method: "PUT",
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //     body: JSON.stringify({ newTitle, newDescription }),
+    //   });
 
-    //     if (res.ok) {
-    //       router.push("/");
-    //     } else {
-    //       throw new Error("Failed to create a topic");
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
+    //   if (!res.ok) {
+    //     throw new Error("Failed to update topic");
     //   }
-    // };
-    addTopic(title, description)      
+
+    //   router.refresh();
+    //   router.push("/");
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    addTopic(title, description)
       .then(res => res.json())
       .then(data => {
         console.log(data)
+        router.refresh()
         router.push('/')
       })
       .catch(err => console.log(err)) 
-  }
-  console.log('Hi client')
+  };
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input

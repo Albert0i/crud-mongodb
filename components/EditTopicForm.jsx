@@ -40,7 +40,7 @@ export default function EditTopicForm({ id, title, description }) {
       })
       .catch(err => console.log(err)) 
   };
-
+  console.log('EditTopicForm client')
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
