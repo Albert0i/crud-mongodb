@@ -5,12 +5,14 @@ import { useRouter } from "next/navigation";
 export default function EditTopicForm({ updateTopic, id, title, description }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
+  const [disabled, setDisabled] = useState('')
 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    setDisabled('disabled')
     updateTopic(id, newTitle, newDescription)
       .then(res => {
         console.log(res)
@@ -38,7 +40,8 @@ export default function EditTopicForm({ updateTopic, id, title, description }) {
         placeholder="Topic Description"
       />
 
-      <button className="px-6 py-3 font-bold text-white bg-green-600 w-fit">
+      <button className="px-6 py-3 font-bold text-white bg-green-600 w-fit disabled:bg-gray-500 disabled:cursor-not-allowed"  
+        disabled={disabled}>
         Update Topic
       </button>
     </form>
