@@ -22,6 +22,6 @@ Reference:
    https://poemuseum.org/the-purloined-letter/   
 */
 /*
-   Being dominated by uncertainity and randomness, life per se, is only a game of unpredictability. Watching carriages come and go in the city, you can easily come to conclusion that they are just too many. When you are in urgent business, you will be much agitated by the unavailability even though you double the fare. It's said that "The gods send nuts to those who have no teeth.", i will say... 
+   Being dominated by uncertainity and randomness, life per se, is only a game of unpredictability. Watching carriages come and go in the city, you can easily come to conclusion that they are just too many. When you are in urgent business, you will be much agitated by the unavailability even though you double the fare. It's said that "time and tide wait for no man" and "The gods send nuts to those who have no teeth", i will say... 
 
 */
