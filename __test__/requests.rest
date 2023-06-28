@@ -29,6 +29,14 @@ Content-Type: application/json
   "description": "A javascript framework"
 }
 
+###
+POST http://localhost:3000/api/topics
+Content-Type: application/json
+
+{
+  "title": "Javascript", 
+  "description": "A programming language"
+}
 
 
 ### Get a topic
