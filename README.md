@@ -28,8 +28,6 @@ The official documentation is awesome... Stop beating around the brushes. Let's 
 - [page.js, loading.js, not-found.js, error.js, route.js](https://nextjs.org/docs/app/api-reference/file-conventions) have *semantic* meanings inside a folder. 
 - Owning to security reasons, all code are *server-first*. 
 - By inserting a **"use client"** or **"use server"** in the topmost position of a file or inside function definition. You evince the intention of behaviour change.
-- A client side component can NOT invoke server side function DIRECTLY.
-- A client side component can invoke server side function which is passed down from server component which imports from other server side component. (more on this in next section)
 - As you may know, NextJS needs a build step.
 
 Using [this repository](https://github.com/Godsont/CRUD_MongoDB), we can quickly bring the project to live and start our voyage...
@@ -53,6 +51,36 @@ module.exports = nextConfig
 to enable server actions features. 
 
 ![alt experimental features](img/experimental.JPG)
+
+I slightly re-factor the source tree to accommodate server actions. 
+
+AddTopicForm.jsx
+```
+"use client";
+import { addTopic } from '@/actions/topicServerAction'
+. . . 
+const onSubmit = ( data ) => {
+    setDisabled('disabled')
+    addTopic(data.title, data.description)
+      .then(res => {
+        console.log(res)
+        router.refresh()
+        router.push('/')
+      })
+      .catch(err => console.log(err)) 
+  };
+. . . 
+```
+topicServerAction.js
+```
+"use server"
+. . . 
+export const addTopic = async (title, description) => {
+    console.log('addTopic Server Action')
+    . . .     
+}
+. . . 
+```
 
 
 ### III. Summary 

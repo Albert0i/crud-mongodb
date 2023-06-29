@@ -1,7 +1,7 @@
 "use server"
 
 export const getTopics = async () => {
-    console.log('getTopics Server Action')
+    console.log('==> getTopics Server Action')
     
     try {
       const res = await fetch("http://localhost:3000/api/topics", {
@@ -19,7 +19,7 @@ export const getTopics = async () => {
   };
 
   export const getTopicById = async (id) => {
-    console.log('getTopicById Server Action')
+    console.log('==> getTopicById Server Action')
 
     try {
       const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
@@ -37,7 +37,7 @@ export const getTopics = async () => {
   };
 
 export const addTopic = async (title, description) => {
-    console.log('addTopic Server Action')
+    console.log('==> addTopic Server Action')
     
     try {
         const res = await fetch("http://localhost:3000/api/topics", {
@@ -56,7 +56,7 @@ export const addTopic = async (title, description) => {
 }
 
 export const updateTopic = async (id, newTitle, newDescription) => {
-    console.log('updateTopic Server Action')
+    console.log('==> updateTopic Server Action')
 
     try {
       const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
@@ -75,7 +75,7 @@ export const updateTopic = async (id, newTitle, newDescription) => {
 }
 
 export const deleteTopic = async (id) => {
-    console.log('deleteTopic Server Action')
+    console.log('==> deleteTopic Server Action')
 
     try {
       // const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {

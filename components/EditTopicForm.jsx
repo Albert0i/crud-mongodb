@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { updateTopic} from '@/actions/topicServerAction'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { topicSchema } from '@/viewModels/topic'
 
-export default function EditTopicForm({ updateTopic, id, title, description }) {
+export default function EditTopicForm({ id, title, description }) {
   const [disabled, setDisabled] = useState('')
 
   const router = useRouter();
