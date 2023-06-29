@@ -1,19 +1,20 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { topicSchema } from '@/viewModels/topic'
 
 export default function AddTopicForm( { addTopic } ) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
   const [disabled, setDisabled] = useState('')
 
   const router = useRouter();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const { register, handleSubmit, formState: { errors } } = useForm( { resolver: zodResolver(topicSchema) } )
 
+  const onSubmit = ( data ) => {
     setDisabled('disabled')
-    addTopic(title, description)
+    addTopic(data.title, data.description)
       .then(res => {
         console.log(res)
         router.refresh()
@@ -23,22 +24,22 @@ export default function AddTopicForm( { addTopic } ) {
   };
   
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
+    <form onSubmit={ handleSubmit(onSubmit) } className="flex flex-col gap-3">
+      <input        
         className="px-8 py-2 border border-slate-500"
         type="text"
+        { ...register('title') }
         placeholder="Topic Title" autoFocus
       />
+      { errors.title && <span className='text-red-500'> { errors.title.message } </span> }
 
       <input
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
         className="px-8 py-2 border border-slate-500"
         type="text"
+        { ...register('description') }
         placeholder="Topic Description"
       />
+      { errors.description && <span className='text-red-500'> { errors.description.message } </span> }
 
       <button
         type="submit"
