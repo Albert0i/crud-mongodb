@@ -19,8 +19,6 @@ With the arrival of [Next.js 13.4](https://nextjs.org/blog/next-13-4), two of th
 - App Router enables the routing defined by the hierarchy of your folders within the app directory. 
 - Server Action enables client-side javascript calling functions on server directly without needing to create an API layer in-between. 
 
-
-### II. Fundamentals
 The official documentation is awesome... Stop beating around the brushes. Let's come to the point: 
 
 - NextJS, which is based on NodeJS and ReactJS, bears characteristic of both worlds.
@@ -37,7 +35,7 @@ The official documentation is awesome... Stop beating around the brushes. Let's 
 Using [this repository](https://github.com/Godsont/CRUD_MongoDB), we can quickly bring the project to live and start our voyage...
 
 
-### III. [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions)
+### II. [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions)
 
 First things first, you need to modify `next.config.js`: 
 
@@ -56,25 +54,12 @@ to enable server actions features.
 
 ![alt experimental features](img/experimental.JPG)
 
-### III. API Server
 
-
-### IV. App Server
-
-
-### V. Deploy with [PM2](https://pm2.keymetrics.io/)
-
-### VI. Deploy with [Docker](https://www.docker.com/)
-
-
-### VII. Deploy with [render.com](https://render.com/)
-
-
-### VIII. Summary 
+### III. Summary 
 [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/)
 
 
-### IX. Reference
+### IV. Reference
 1. [Server Actions: NextJS 13.4's Best New Feature](https://youtu.be/czvSZqnpTHs)
 2. [Next.js Server Actions in 15 min](https://youtu.be/g1dwTNxGmFQ)
 3. [Step-by-Step Guide: Create a Next.js 13 CRUD App with MongoDB from Scratch](https://youtu.be/wNWyMsrpbz0)
@@ -88,8 +73,14 @@ to enable server actions features.
 
 
 ### Epilogue 
-```
-```
+
+A **Procrustean bed** is a metaphor derived from Greek mythology, specifically the story of Procrustes, a rogue blacksmith and bandit who had an iron bed in his lair. Procrustes would capture unsuspecting travelers and force them to lie on the bed. If the victims were too long for the bed, he would amputate their limbs, and if they were too short, he would stretch them until they fit.
+
+The term "Procrustean bed" has come to symbolize any situation in which a rigid standard or solution is applied, regardless of the specific circumstances or individual differences. In essence, it represents a one-size-fits-all approach that can be harmful or counterproductive when applied without considering the unique aspects of a particular situation or person.
+
+For example, a Procrustean bed might refer to the insistence on using a particular management style or educational approach for all employees or students, even when it's clear that different individuals might benefit from different approaches.
+
+─── ChatGPT-4 
 
 
 ### EOF (2023/06/30)
