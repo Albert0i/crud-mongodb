@@ -1,7 +1,7 @@
 ## From [Node](https://nodejs.org/en) to [NEXT](https://nextjs.org/)
 
 
-<div style="text-align: right; color:white; background-color:black ; font-size:x-small;">
+<div style="text-align: right; color:white; background-color:black; font-size: small;">
 ‘When I wish to find out how wise, or how stupid, or how good, or how wicked is any one, or what are his thoughts at the moment, I fashion the expression of my face, as accurately as possible, in accordance with the expression of his, and then wait to see what thoughts or sentiments arise in my mind or heart, as if to match or correspond with the expression.’ 
 <br/><br/>
 ─── The Purloined Letter, Edgar Allan Poe
@@ -9,9 +9,9 @@
 
 
 ### Prologue
-Being dominated by uncertainity and randomness, *life*, per se, is only a game of unpredictability. Watching carriages come and go in the city, you may easily come to conclusion that they are just too many. In case of urgency, you will be much agitated by the unavailability even though you double the fare. 
+Being dominated by uncertainity and randomness, *life*, per se, is only a game of unpredictability. Watching carriages come and go in the city, you may easily come to conclusion that they are just too many. In case of urgency, you will be much agitated by the unavailability even though reluctantly you double the fare. 
 
-It's said that ["time and tide wait for no man"](https://dictionary.cambridge.org/dictionary/english/time-and-tide-wait-for-no-man) and ["The gods send nuts to those who have no teeth"](https://www.oxfordreference.com/display/10.1093/acref/9780199539536.001.0001/acref-9780199539536-e-921). At a certain point, any further physical or mental exertion render a fruitless naught, i will say it's a matter of time, it's a matter of chance... 
+It's said that ["time and tide wait for no man"](https://dictionary.cambridge.org/dictionary/english/time-and-tide-wait-for-no-man) and ["The gods send nuts to those who have no teeth"](https://www.oxfordreference.com/display/10.1093/acref/9780199539536.001.0001/acref-9780199539536-e-921). At a certain point, any further physical or mental exertion yield fruitless and infertile naught, i would like to say that it's a matter of time, it's a matter of chance... 
 
 
 ### I. Introduction
@@ -21,7 +21,7 @@ With the arrival of [Next.js 13.4](https://nextjs.org/blog/next-13-4), two of th
 
 
 ### II. Fundamentals
-The official documentation of NextJS is awesome. Instead of beating around brushes. Here it comes the ten commandments:
+The official documentation is awesome... Stop beating around the brushes. Let's come to the point: 
 
 - NextJS, which is based on NodeJS and ReactJS, bears characteristic of both worlds.
 - By dint of [JSX](https://legacy.reactjs.org/docs/introducing-jsx.html) syntax, it evades utilization of [Template Engines](https://www.tutorialsteacher.com/nodejs/template-engines-for-nodejs) to produce the final HTML.
@@ -34,6 +34,12 @@ The official documentation of NextJS is awesome. Instead of beating around brush
 - A client side component can invoke server side function which is passed down from server component which imports from other server side component. (more on this in next section)
 - As you may know, NextJS needs a build step.
 
+Using [this repository](https://github.com/Godsont/CRUD_MongoDB), we can quickly bring the project to live and start our voyage...
+
+
+### III. [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions)
+
+First things first, you need to modify `next.config.js`: 
 
 next.config.js
 ```javascript
@@ -46,7 +52,9 @@ const nextConfig = {
 
 module.exports = nextConfig
 ```
+to enable server actions features. 
 
+![alt experimental features](img/experimental.JPG)
 
 ### III. API Server
 
