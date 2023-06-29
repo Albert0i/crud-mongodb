@@ -82,6 +82,12 @@ export const addTopic = async (title, description) => {
 . . . 
 ```
 
+![alt experimental addTopic1](img/addTopicServerAction1.JPG)
+
+By removing the "use server" from topicServerAction.js and re-execute. 
+
+![alt experimental addTopic2](img/addTopicServerAction2.JPG)
+
 
 ### III. Summary 
 [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/)
