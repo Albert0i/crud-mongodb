@@ -6,8 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { topicSchema } from '@/viewModels/topic'
 
 export default function EditTopicForm({ updateTopic, id, title, description }) {
-  // const [newTitle, setNewTitle] = useState(title);
-  // const [newDescription, setNewDescription] = useState(description);
   const [disabled, setDisabled] = useState('')
 
   const router = useRouter();
