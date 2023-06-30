@@ -88,7 +88,12 @@ By removing the "use server" from topicServerAction.js and re-execute.
 
 
 ### III. Summary 
+
 [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/)
+
+But there is a catch, isn't it? 
+
+![alt Unhandled Runtime Error](img/UnhandledRuntimeError.JPG)
 
 
 ### IV. Reference
