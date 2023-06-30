@@ -86,17 +86,17 @@ By removing the "use server" from topicServerAction.js and re-execute.
 
 ![alt experimental addTopic2](img/addTopicServerAction2.JPG)
 
-
-### III. Summary 
-
-[Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/)
-
-But there is a catch, isn't it? 
-
-![alt Unhandled Runtime Error](img/UnhandledRuntimeError.JPG)
+### III. Deployment
 
 
-### IV. Reference
+### IV. Summary 
+
+It's said that ["There is nothing new under the sun."](https://en.wiktionary.org/wiki/there_is_nothing_new_under_the_sun), I feel hundred percent true especially when reading [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/) in contrast. 
+
+It is a catch, isn't it? 
+
+
+### V. Reference
 1. [Server Actions: NextJS 13.4's Best New Feature](https://youtu.be/czvSZqnpTHs)
 2. [Next.js Server Actions in 15 min](https://youtu.be/g1dwTNxGmFQ)
 3. [Step-by-Step Guide: Create a Next.js 13 CRUD App with MongoDB from Scratch](https://youtu.be/wNWyMsrpbz0)
