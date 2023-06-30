@@ -6,7 +6,7 @@ import { deleteTopic } from '@/actions/topicServerAction'
 
 export default function RemoveBtn({ id }) {
   const router = useRouter();
-  const removeTopic = async () => {
+  const removeTopic = () => {
     const confirmed = confirm("Are you sure?");
 
     if (confirmed) {

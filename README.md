@@ -1,4 +1,4 @@
-## From [Node](https://nodejs.org/en) to [NEXT](https://nextjs.org/)
+## [NEXT](https://nextjs.org/) to [Node](https://nodejs.org/en)<br /> ── ‘If you are right, I must be wrong!’ 
 
 
 <div style="text-align: right; color:white; background-color:black; font-size: small;">
@@ -9,26 +9,24 @@
 
 
 ### Prologue
-Being dominated by uncertainity and randomness, *life*, per se, is only a game of unpredictability. Watching carriages come and go in the city, you may easily come to conclusion that they are just too many. In case of urgency, you will be much agitated by the unavailability even though reluctantly you double the fare. 
+Being dominated by uncertainity and randomness, *life*, per se, is only a game of unpredictability. Watching carriages come and go in the city, you may easily come to conclusion that they are just too many. But in case of urgency, you will be much agitated by the unavailability even though reluctantly you double the fare. 
 
-It's said that ["time and tide wait for no man"](https://dictionary.cambridge.org/dictionary/english/time-and-tide-wait-for-no-man) and ["The gods send nuts to those who have no teeth"](https://www.oxfordreference.com/display/10.1093/acref/9780199539536.001.0001/acref-9780199539536-e-921). At a certain point, any further physical or mental exertion yield fruitless and infertile naught, i would like to say that it's a matter of time, it's a matter of chance... 
+It's said that ["time and tide wait for no man"](https://dictionary.cambridge.org/dictionary/english/time-and-tide-wait-for-no-man) and ["The gods send nuts to those who have no teeth"](https://www.oxfordreference.com/display/10.1093/acref/9780199539536.001.0001/acref-9780199539536-e-921). At a certain point of time, any further physical or mental exertion yield fruitless and infertile naught, I would like to say that it's a matter of time, it's a matter of chance... 
 
 
 ### I. Introduction
 With the arrival of [Next.js 13.4](https://nextjs.org/blog/next-13-4), two of the most appealing features are **App Router** and **Server Action**. 
-- App Router enables the routing defined by the hierarchy of your folders within the app directory. 
+
+The official [documentation](https://nextjs.org/docs) is awesome... CSR, SSR, SSG, ISR... lots and lots of [jargons](https://www.flavienbonvin.com/data-building-strategy-for-nextjs-app/)... Stop beating around the brushes. Let's come to the point: 
+
+- NextJS, which is based on NodeJS and ReactJS, is *de facto* hybrid of both worlds, and thus inherits many peculiar characteristics from its ancestors.
+- By dint of [JSX](https://legacy.reactjs.org/docs/introducing-jsx.html) syntax, it evades utilization of [Template Engines](https://www.tutorialsteacher.com/nodejs/template-engines-for-nodejs) such as [EJS](https://ejs.co/) or [Pug](https://pugjs.org/api/getting-started.html) to produce the final HTML.
+- App Router enables the routing defined by the hierarchy of your folders within the app directory (old-school flavour) plus flexible dynamic routing mechanism. 
 - Server Action enables client-side javascript calling functions on server directly without needing to create an API layer in-between. 
-
-The official documentation is awesome... Stop beating around the brushes. Let's come to the point: 
-
-- NextJS, which is based on NodeJS and ReactJS, bears characteristic of both worlds.
-- By dint of [JSX](https://legacy.reactjs.org/docs/introducing-jsx.html) syntax, it evades utilization of [Template Engines](https://www.tutorialsteacher.com/nodejs/template-engines-for-nodejs) to produce the final HTML.
-- App Router maps URL to folder structure for simple page routing. 
-- App Router provides dynamic routing mechanism for implementing REST API. 
-- [page.js, loading.js, not-found.js, error.js, route.js](https://nextjs.org/docs/app/api-reference/file-conventions) have *semantic* meanings inside a folder. 
-- Owning to security reasons, all code are *server-first*. 
-- By inserting a **"use client"** or **"use server"** in the topmost position of a file or inside function definition. You evince the intention of behaviour change.
-- As you may know, NextJS needs a build step.
+- [page.js, loading.js, not-found.js, error.js, route.js](https://nextjs.org/docs/app/api-reference/file-conventions) have *semantic* meanings inside a folder. There's no such thing as `server.js` but [Serverless Functions](https://vercel.com/docs/concepts/functions/serverless-functions). 
+- Owing to security reasons, all components are *server first* by default. 
+- By inserting a **"use client"** or **"use server"** in the beginning of a file or in topmost position within a function definition. You evince the intention of behaviour change.
+- As you may know, ReactJS and Tailwindcss needs a build step and so does NextJS.
 
 Using [this repository](https://github.com/Godsont/CRUD_MongoDB), we can quickly bring the project to live and start our voyage...
 
