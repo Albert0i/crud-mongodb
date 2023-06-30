@@ -87,11 +87,12 @@ By removing the "use server" from topicServerAction.js and re-execute.
 ![alt experimental addTopic2](img/addTopicServerAction2.JPG)
 
 ### III. Deployment
+(to be continue...)
 
 
 ### IV. Summary 
 
-It's said that ["There is nothing new under the sun."](https://en.wiktionary.org/wiki/there_is_nothing_new_under_the_sun), I feel hundred percent true especially when reading [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/) in contrast. 
+It's said that ["There is nothing new under the sun."](https://en.wiktionary.org/wiki/there_is_nothing_new_under_the_sun), I feel hundred percent true especially when reading the article [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/). 
 
 It is a catch, isn't it? 
 
