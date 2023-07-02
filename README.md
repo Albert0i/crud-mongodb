@@ -11,7 +11,7 @@
 ### Prologue
 Being dominated by uncertainity and randomness, *life*, per se, is only a game of unpredictability. Watching carriages come and go in the city, you may easily come to conclusion that they are just too many. But in case of urgency, you will be much agitated by the unavailability even though reluctantly you double the fare. 
 
-It's said that ["time and tide wait for no man"](https://dictionary.cambridge.org/dictionary/english/time-and-tide-wait-for-no-man) and ["The gods send nuts to those who have no teeth"](https://www.oxfordreference.com/display/10.1093/acref/9780199539536.001.0001/acref-9780199539536-e-921). At a certain point of time, any further physical or mental exertion yield fruitless and infertile naught, I would like to say that it's a matter of time, it's a matter of chance... 
+It's said that ["time and tide wait for no man"](https://dictionary.cambridge.org/dictionary/english/time-and-tide-wait-for-no-man) and ["The gods send nuts to those who have no teeth"](https://www.oxfordreference.com/display/10.1093/acref/9780199539536.001.0001/acref-9780199539536-e-921). At a certain point of time, any further physical or mental exertion yield futile a nought, I would like to say that it's a matter of time, it's a matter of chance... 
 
 
 ### I. Introduction
@@ -121,4 +121,4 @@ For example, a Procrustean bed might refer to the insistence on using a particul
 ─── ChatGPT-4 
 
 
-### EOF (2023/06/30)
+### EOF (2023/07/02)
