@@ -50,7 +50,7 @@ to enable server actions features.
 
 ![alt experimental features](img/experimental.JPG)
 
-I slightly re-factor the source tree to accommodate server actions. 
+Bear in your mind, Server Actions MUST be async functions. I slightly re-factor the source tree to accommodate server actions. 
 
 AddTopicForm.jsx
 ```
@@ -82,9 +82,11 @@ export const addTopic = async (title, description) => {
 
 ![alt experimental addTopic1](img/addTopicServerAction1.JPG)
 
-By removing the "use server" from topicServerAction.js and re-execute. 
+Message is printed out on the server console. However, taking off the "use server" and re-execute. 
 
 ![alt experimental addTopic2](img/addTopicServerAction2.JPG)
+
+Message is printed out on browser console. 
 
 ### III. Deployment
 (to be continue...)
@@ -92,9 +94,42 @@ By removing the "use server" from topicServerAction.js and re-execute.
 
 ### IV. Summary 
 
-It's said that ["There is nothing new under the sun."](https://en.wiktionary.org/wiki/there_is_nothing_new_under_the_sun), I feel hundred percent true especially when reading the article [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/). 
+It's said that ["There is nothing new under the sun."](https://en.wiktionary.org/wiki/there_is_nothing_new_under_the_sun), I feel hundred percent true especially when re-reading the article [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/): 
 
-It is a catch, isn't it? 
+- ASP.NET WebForm has no routing mechanism at all, every URL strictly align with source directory structure. 
+- PageMethods are Server Actions
+```
+[WebMethod]  
+ublic static string ProcessIT(string name, string address)  
+{  
+   string result = "Welcome Mr. " + name + ". Your address is '" + address + "'.";  
+   return result;  
+}  
+```
+- By Enabling PageMethod in ScriptManager, an API is generated and send to the browser
+```
+<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>  
+```
+- Using javascript to call function on the server. 
+```
+<script type="text/javascript">  
+    function HandleIT() {  
+        var name = document.getElementById('<%=txtname.ClientID %>').value;  
+        var address = document.getElementById('<%=txtaddress.ClientID %>').value;  
+
+        PageMethods.ProcessIT(name, address, onSucess, onError);   
+        function onSucess(result) {  
+            alert(result);  
+        }  
+
+        function onError(result) {  
+            alert('Something wrong.');  
+        }  
+    }  
+   </script>  
+```
+
+*It is a catch, isn't it?*
 
 
 ### V. Reference
