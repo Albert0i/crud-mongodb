@@ -1,10 +1,12 @@
 "use server"
 
+const apiUrl = process.env.API_URL
+
 export const getTopics = async () => {
     console.log('==> getTopics Server Action')
     
     try {
-      const res = await fetch("http://localhost:3000/api/topics", {
+      const res = await fetch(`${apiUrl}/topics`, {
         cache: "no-store",
       });
   
@@ -22,7 +24,7 @@ export const getTopics = async () => {
     console.log('==> getTopicById Server Action')
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(`${apiUrl}/topics/${id}`, {
         cache: "no-store",
       });
   
@@ -40,7 +42,7 @@ export const addTopic = async (title, description) => {
     console.log('==> addTopic Server Action')
     
     try {
-        const res = await fetch("http://localhost:3000/api/topics", {
+        const res = await fetch(`${apiUrl}/topics`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -59,7 +61,7 @@ export const updateTopic = async (id, newTitle, newDescription) => {
     console.log('==> updateTopic Server Action')
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(`${apiUrl}/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -81,7 +83,7 @@ export const deleteTopic = async (id) => {
       // const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
       //   method: "DELETE",
       // });
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(`${apiUrl}/topics/${id}`, {
         method: "DELETE",
       });
 
