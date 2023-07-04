@@ -134,7 +134,8 @@ ublic static string ProcessIT(string name, string address)
 ```
 - By Enabling PageMethod in ScriptManager, an API is generated and send to the browser
 ```
-<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>  
+<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+</asp:ScriptManager>  
 ```
 - Using javascript to call function on the server. 
 ```
