@@ -116,7 +116,7 @@ Create a new **Web Service** by connecting to your [Git](https://github.com/) re
 
 By default, Render uses Node version [14.17.0](https://render.com/docs/node-version). Specify an environment variable called `NODE_VERSION` to match your local development version proved to be crucial. (check with `node -v`)
 
-![alt experimental Logs](img/render.com-3.JPG)
+![alt Logs](img/render.com-3.JPG)
 
 [Live demo](https://crud-mongodb-wa9a.onrender.com)
 
