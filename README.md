@@ -88,15 +88,12 @@ Message is printed out on the server console. However, taking off the "use serve
 
 Message is printed out on browser console. 
 
-### III. Deployment
-(to be continue...)
 
-
-### IV. Summary 
+### III. Retrospection 
 
 It's said that ["There is nothing new under the sun."](https://en.wiktionary.org/wiki/there_is_nothing_new_under_the_sun), I feel hundred percent true especially when re-reading the article [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/): 
 
-- ASP.NET WebForm has no routing mechanism at all, every URL strictly align with source directory structure. 
+- ASP.NET WebForm has no routing mechanism at all, every URL strictly align with source directory structure and there is no whatsoever dynamic routing. 
 - PageMethods are Server Actions
 ```
 [WebMethod]  
