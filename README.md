@@ -32,7 +32,6 @@ Using [this repository](https://github.com/Godsont/CRUD_MongoDB), we can quickly
 
 
 ### II. [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions)
-
 First things first, you need to modify `next.config.js`: 
 
 next.config.js
@@ -89,8 +88,38 @@ Message is printed out on the server console. However, taking off the "use serve
 Message is printed out on browser console. 
 
 
-### III. Retrospection 
+### III. Deploy to [render.com](https://render.com/)
+Create a new **Web Service** by connecting to your [Git](https://github.com/) repository: 
 
+#### Settings 
+- Name: &lt;Your Web Service name&gt; 
+- Region: &lt;Your favourite region&gt; 
+- Branch: `main`
+- Runtime: `Node`
+- Build Command: `npm install && npm run build` 
+- Start Command: `npm start`
+- Auto-Deploy: Choose `No`, choose `Yes` will trigger re-deployment upon every update to your Git repository.
+
+#### Environment
+- MONGODB_URI: &lt;Your MongoDB connection string&gt; 
+- API_URL: &lt;Your host name&gt;/api
+- NODE_VERSION: `18.16.1`
+- APP_ENV: `render.com`
+
+By default, Render uses Node version [14.17.0](https://render.com/docs/node-version). Specify an environment variable called `NODE_VERSION` to match your local development version proved to be crucial. (check with `node -v`)
+
+![alt experimental Logs](img/render.com-3.JPG)
+
+[Live demo](https://crud-mongodb-wa9a.onrender.com)
+
+>Free instance types will spin down with inactivity. Upgrade to a paid instance type to prevent this behavior. 
+
+
+### IV. Deploy with [Docker](https://www.docker.com/)
+(to be continue...)
+
+
+### V. Retrospection 
 It's said that ["There is nothing new under the sun."](https://en.wiktionary.org/wiki/there_is_nothing_new_under_the_sun), I feel hundred percent true especially when re-reading the article [Calling an ASP.NET C# Method (Web Method) Using JavaScript](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/calling-an-Asp-Net-C-Sharp-method-web-method-using-javascript/): 
 
 - ASP.NET WebForm has no routing mechanism at all, every URL strictly align with source directory structure and there is no whatsoever dynamic routing. 
