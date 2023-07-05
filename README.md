@@ -83,7 +83,7 @@ export const addTopic = async (title, description) => {
 
 Message is printed out on the server console. However, taking off the "use server" and re-execute. 
 
-![alt experimental addTopic2](img/addTopicServerAction2.JPG)
+![alt experimental addTopic2](img/addTopicServerAction3.JPG)
 
 Message is printed out on browser console. 
 
