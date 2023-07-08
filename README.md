@@ -93,7 +93,91 @@ Message is printed out on browser console.
 
 
 ### IV. Deploy with [Docker](https://www.docker.com/)
-(to be continue...)
+According to official [deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying#docker-image) and mainly [With Docker](https://github.com/vercel/next.js/tree/canary/examples/with-docker), I slightly modify the Dockerfile to match my development environment: 
+
+```
+FROM node:18.16.1-alpine3.17 AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+# Install dependencies based on the preferred package manager
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+# Next.js collects completely anonymous telemetry data about general usage.
+# Learn more here: https://nextjs.org/telemetry
+# Uncomment the following line in case you want to disable telemetry during the build.
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN npm run build
+
+# Production image, copy all the files and run next
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV development
+ENV NODE_VERSION 18.16.1
+# Uncomment the following line in case you want to disable telemetry during runtime.
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT 3000
+
+CMD ["node", "server.js"]
+```
+
+Then modify `next.config.js` as follow:
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    experimental: {
+        serverActions: true,
+      },
+
+    output: 'standalone'
+}
+
+module.exports = nextConfig
+```
+
+To build the docker image: 
+```
+docker build -t crud-mongodb:1.0 .
+```
+![alt build1](img/Screenshot%202023-07-08%204.43.31%20PM.png)
+
+![alt build2](img/Screenshot%202023-07-08%204.48.04%20PM.png)
+
+![alt history](img/Screenshot%202023-07-08%204.49.26%20PM.png)
+
+To give it a shot with: 
+```
+docker run -p 3000:3000 --env-file .env crud-mongodb:1.0
+```
+![alt run](img/Screenshot%202023-07-08%204.50.53%20PM.png)
 
 
 ### V. Deploy to [render.com](https://render.com/)
@@ -171,9 +255,11 @@ ublic static string ProcessIT(string name, string address)
 5. [NEXTjs | Data Fetching](https://nextjs.org/docs/app/building-your-application/data-fetching)
 6. [How to enable cors in Nextjs 13 Route Handlers](https://github.com/vercel/next.js/discussions/47933)
 7. [How to Deploy Nextjs Web Application with PM2](https://dykraf.com/blog/deploying-nextjs-web-application-with-pm2)
-8. [With Docker - Multiple Deployment Environments](https://github.com/vercel/next.js/tree/canary/examples/with-docker-multi-env)
-9. [Deploy a Next.js App](https://render.com/docs/deploy-nextjs-app)
-10. [The Purloined Letter](https://poemuseum.org/the-purloined-letter/)
+8. [Creating a Docker Image of Your Nextjs App](https://www.locofy.ai/blog/create-a-docker-image-of-your-nextjs-app)
+9. [With Docker - Multiple Deployment Environments](https://github.com/vercel/next.js/tree/canary/examples/with-docker-multi-env)
+10. [Deploy a Next.js App](https://render.com/docs/deploy-nextjs-app)
+11. [How to Configure Next.Js Image Hostname](https://postsrc.com/code-snippets/how-to-configure-nextjs-image-hosting)
+12. [The Purloined Letter](https://poemuseum.org/the-purloined-letter/)
 
 
 ### Epilogue 
@@ -187,4 +273,4 @@ For example, a Procrustean bed might refer to the insistence on using a particul
 ─── ChatGPT-4 
 
 
-### EOF (2023/07/07)
+### EOF (2023/07/09)
