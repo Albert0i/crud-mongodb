@@ -4,7 +4,7 @@ const nextConfig = {
         serverActions: true,
       },
 
-    output: 'standalone'
+    // output: 'standalone'
 }
 
 module.exports = nextConfig
