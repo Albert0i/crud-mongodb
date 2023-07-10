@@ -17,7 +17,7 @@ It's said that ["time and tide wait for no man"](https://dictionary.cambridge.or
 ### I. Introduction
 With the arrival of [Next.js 13.4](https://nextjs.org/blog/next-13-4), two of the most appealing features are **App Router** and **Server Action**. 
 
-The official [documentation](https://nextjs.org/docs) is awesome... CSR, SSR, SSG, ISR... lots and lots of [jargons](https://www.flavienbonvin.com/data-building-strategy-for-nextjs-app/)... Stop beating around the brushes. Let's come to the point: 
+The official [documentation](https://nextjs.org/docs) is awesome... [CSR, SSR, SSG, ISR](https://youtu.be/YkxrbxoqHDw)... lots and lots of jargons... Stop beating around the brushes. Let's come to the point: 
 
 - NextJS, which is based on NodeJS and ReactJS, is *de facto* hybrid of both worlds, and thus inherits many peculiar characteristics from its ancestors.
 - By dint of [JSX](https://legacy.reactjs.org/docs/introducing-jsx.html) syntax, it evades utilization of [Template Engines](https://www.tutorialsteacher.com/nodejs/template-engines-for-nodejs) such as [EJS](https://ejs.co/) or [Pug](https://pugjs.org/api/getting-started.html) to produce the final HTML.
@@ -273,4 +273,4 @@ For example, a Procrustean bed might refer to the insistence on using a particul
 ─── ChatGPT-4 
 
 
-### EOF (2023/07/09)
+### EOF (2023/07/14)
