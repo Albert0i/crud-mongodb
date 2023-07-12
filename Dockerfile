@@ -1,57 +1,59 @@
-FROM node:18.16.1-alpine3.17 AS base
+FROM mcr.microsoft.com/windows/nanoserver:20H2 as builder
 
-# Install dependencies only when needed
-FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
+COPY *.json *.js node-v18.16.1-win-x64.zip ./
 
-# Install dependencies based on the preferred package manager
-COPY package.json package-lock.json* ./
-RUN npm ci
+# Add NodeJS to search path 
+ENV PATH="C:\Windows\system32;C:\Windows;C:\app\node-v18.16.1-win-x64;"
+ 
+# Because we don't have PowerShell, we will install using CURL and TAR
+RUN tar.exe -xf node-v18.16.1-win-x64.zip && \
+    del node-v18.16.1-win-x64.zip 
 
-# Rebuild the source code only when needed
-FROM base AS builder
+COPY src src
+
+RUN npm ci && \
+    npm run build 
+
+### 
+FROM mcr.microsoft.com/windows/nanoserver:20H2 as runner 
+
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY node-v18.16.1-win-x64.zip ./
 
-# Next.js collects completely anonymous telemetry data about general usage.
-# Learn more here: https://nextjs.org/telemetry
-# Uncomment the following line in case you want to disable telemetry during the build.
-ENV NEXT_TELEMETRY_DISABLED 1
+# Add NodeJS to search path 
+ENV PATH="C:\Windows\system32;C:\Windows;C:\app\node-v18.16.1-win-x64;"
 
-RUN npm run build
+# Because we don't have PowerShell, we will install using CURL and TAR
+RUN tar.exe -xf node-v18.16.1-win-x64.zip && \
+    del node-v18.16.1-win-x64.zip 
 
-# Production image, copy all the files and run next
-FROM base AS runner
-WORKDIR /app
-
-ENV NODE_ENV development
-ENV NODE_VERSION 18.16.1
-# Uncomment the following line in case you want to disable telemetry during runtime.
-ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
+COPY --from=builder /app/.next/standalone .next/standalone
+COPY --from=builder /app/.next/static .next/standalone/.next/static
+COPY public .next/standalone/public
 
 EXPOSE 3000
-
-ENV PORT 3000
-
-CMD ["node", "server.js"]
+ENTRYPOINT ["node", ".next/standalone/server.js"]
 
 # 
 # docker build -t crud-mongodb:1.0 . 
 #
 # docker run -p 3000:3000 --env-file .env crud-mongodb:1.0
+# 
+
+#
+# With Docker
+# https://github.com/vercel/next.js/blob/canary/examples/with-docker/README.md
+#
+# Creating a Docker Image of Your Nextjs App
+# https://www.locofy.ai/blog/create-a-docker-image-of-your-nextjs-app
+# 
+# NextJS | Output
+# https://nextjs.org/docs/pages/api-reference/next-config-js/output
+#
+#RUN curl.exe -o node-v18.16.1-win-x64.zip -L https://nodejs.org/dist/v18.16.0/node-v18.16.1-win-x64.zip && \
+#    tar.exe -xf node-v18.16.1-win-x64.zip && \
+#    del node-v18.16.1-win-x64.zip 
+#
+# (2023/07/13)
 # 
