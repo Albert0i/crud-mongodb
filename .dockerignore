@@ -1,7 +1,12 @@
 Dockerfile
+Dockerfile.*
 .dockerignore
 node_modules
-npm-debug.log
-README.md
+*.md
 .next
 .git
+__test__
+img
+.env
+.gitignore
+docker-compose.yml

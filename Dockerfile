@@ -10,7 +10,12 @@ ENV PATH="C:\Windows\system32;C:\Windows;C:\app\node-v18.16.1-win-x64;"
 RUN tar.exe -xf node-v18.16.1-win-x64.zip && \
     del node-v18.16.1-win-x64.zip 
 
-COPY src src
+COPY actions ./actions 
+COPY app ./app
+COPY components ./components
+COPY libs ./libs 
+COPY models ./models 
+COPY viewModels/ ./viewModels
 
 RUN npm ci && \
     npm run build 
@@ -19,7 +24,7 @@ RUN npm ci && \
 FROM mcr.microsoft.com/windows/nanoserver:20H2 as runner 
 
 WORKDIR /app
-COPY node-v18.16.1-win-x64.zip ./
+COPY node-v18.16.1-win-x64.zip  ./
 
 # Add NodeJS to search path 
 ENV PATH="C:\Windows\system32;C:\Windows;C:\app\node-v18.16.1-win-x64;"
@@ -36,9 +41,9 @@ EXPOSE 3000
 ENTRYPOINT ["node", ".next/standalone/server.js"]
 
 # 
-# docker build -t crud-mongodb:1.0 . 
+# docker build -t crud-mongodb:1.0 --network "Default Switch" . 
 #
-# docker run -p 3000:3000 --env-file .env crud-mongodb:1.0
+# docker run -p 3000:3000 --env-file .env --network "Default Switch" crud-mongodb:1.0 
 # 
 
 #
@@ -51,7 +56,13 @@ ENTRYPOINT ["node", ".next/standalone/server.js"]
 # NextJS | Output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 #
-#RUN curl.exe -o node-v18.16.1-win-x64.zip -L https://nodejs.org/dist/v18.16.0/node-v18.16.1-win-x64.zip && \
+# Not able to access internet inside docker windows container
+# https://stackoverflow.com/questions/59766135/not-able-to-access-internet-inside-docker-windows-container
+#
+# Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.abcd0.mongodb.net
+# https://stackoverflow.com/questions/68875026/error-querysrv-eservfail-mongodb-tcp-cluster0-abcd0-mongodb-net
+#
+#RUN curl.exe -o node-v18.16.1-win-x64.zip -L https://nodejs.org/dist/v18.16.1/node-v18.16.1-win-x64.zip && \
 #    tar.exe -xf node-v18.16.1-win-x64.zip && \
 #    del node-v18.16.1-win-x64.zip 
 #

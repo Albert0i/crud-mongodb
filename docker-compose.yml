@@ -1,0 +1,17 @@
+version: "3"
+services:
+  redis:
+    build: 
+      context: .
+    image: 
+      crud-mongodb:1.0
+    container_name:
+        crud-mongodb
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+
+#
+# EOF (2023/07/13)
+#
