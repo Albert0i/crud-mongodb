@@ -16,8 +16,7 @@ The whole thing hinges on `standalone` mode as described in official documentati
 
 > Next.js can automatically create a standalone folder that copies only the necessary files for a production deployment including select files in node_modules.
 
-> To leverage this automatic copying you can enable it in your next.config.js:
-next.config.js
+> To leverage this automatic copying you can enable it in your `next.config.js`:
 ```
 module.exports = {
   output: 'standalone',
