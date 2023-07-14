@@ -146,22 +146,27 @@ Building image for Windows container is an absolute drudgery. I have spent hours
 
 ![alt size](img/size.JPG)
 
+PS: If you experienced situations of unable to reach external resource. Try doing this:  
+```
+docker network create -d transparent trans
+```
+
+
+### V. Reference
+1. [Creating a Docker Image of Your Nextjs App](https://www.locofy.ai/blog/create-a-docker-image-of-your-nextjs-app)
+2. [Running a Node / Angular Application in a container based on Windows Nano Server](https://kevinsaye.wordpress.com/2019/08/06/running-a-node-angular-application-in-a-container-based-on-windows-nano-server/)
+3. [Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.abcd0.mongodb.net](https://stackoverflow.com/questions/68875026/error-querysrv-eservfail-mongodb-tcp-cluster0-abcd0-mongodb-net)
+4. [Connect to MongoDB Atlas from Google App Engine](https://stackoverflow.com/questions/51946930/connect-to-mongodb-atlas-from-google-app-engine)
+5. [Windows docker container cannot ping host](https://stackoverflow.com/questions/43074576/windows-docker-container-cannot-ping-host)
+
+
+### Epilogue 
+```
 hither and thither,
 to and fro,
 from stem to stern,
 starboard and larboard. 
-
-
-### V. Reference
-1. [Running a Node / Angular Application in a container based on Windows Nano Server](https://kevinsaye.wordpress.com/2019/08/06/running-a-node-angular-application-in-a-container-based-on-windows-nano-server/)
-2. [Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.abcd0.mongodb.net](https://stackoverflow.com/questions/68875026/error-querysrv-eservfail-mongodb-tcp-cluster0-abcd0-mongodb-net)
-3. [Connect to MongoDB Atlas from Google App Engine](https://stackoverflow.com/questions/51946930/connect-to-mongodb-atlas-from-google-app-engine)
-4. [Not able to access internet inside docker windows container](https://stackoverflow.com/questions/59766135/not-able-to-access-internet-inside-docker-windows-container)
-
-
-### Epilogue 
-<div style="text-align: left;">
-</div>
+```
 
 
 ### EOF (2023/07/14)
