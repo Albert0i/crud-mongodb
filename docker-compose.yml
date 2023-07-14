@@ -1,6 +1,6 @@
 version: "3"
 services:
-  redis:
+  crud-mongodb:
     build: 
       context: .
     image: 
@@ -13,5 +13,5 @@ services:
       - .env
 
 #
-# EOF (2023/07/13)
+# EOF (2023/07/14)
 #

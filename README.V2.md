@@ -125,7 +125,7 @@ To leverage our docker image, we need a `docker-compose` and `Makefile` file, so
 ```
 version: "3"
 services:
-  redis:
+  crud-mongodb:
     build: 
       context: .
     image: 
