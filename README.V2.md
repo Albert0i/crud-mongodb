@@ -6,7 +6,7 @@ Have you ever been tempted to try on unorthodox or even unethical things in earl
 
 
 ### Prologue
-Previously, we've dockerized [crud-mongodb](https://github.com/Albert0i/crud-mongodb) on linux container. Dockerizing on Windows container is such a challenging task due to intrinsic deficiency and subtle incompatibility, and is a far more difficult way to deploy our app.
+Previously, we've dockerized [crud-mongodb](https://github.com/Albert0i/crud-mongodb) on linux container. Dockerizing on Windows container is such a challenging task due to intrinsic deficiency and subtle incompatibility, and is a way far more difficult to deploy our app.
 
 Few of us ever try or even know of `Windows container`, ie. a kind of container inside which  windows compatible binaries are run. Windows container is such a *niche market* that scarcely no useful resource could be found without tremendous endeavour. Enjoy this fantastic voyage if you are a windows maniac (like me)... 
 
