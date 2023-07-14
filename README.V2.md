@@ -105,6 +105,7 @@ docker run -p 3000:3000 --env-file .env crud-mongodb:1.0
 ![alt querySrv ESERVFAIL](img/querySrvESERVFAIL-1.JPG)
 
 Since `querySrv ESERVFAIL` is a DNS error, I have to use the older version of MongoDB Compass URL:
+
 For 1.12  or later
 ```
 mongodb+srv://mernuser:<password>@cluster0.6nwmnei.mongodb.net/
