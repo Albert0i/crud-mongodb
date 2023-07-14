@@ -6,13 +6,13 @@ Have you ever been tempted to try on unorthodox or even unethical things in earl
 
 
 ### Prologue
-Previously, we've dockerized [crud-mongodb](https://github.com/Albert0i/crud-mongodb) on linux container. Dockerizing on Windows container is such a challenging task due to intrinsic deficiency and subtle incompatibility, is a far more difficult way to deploy our app.
+Previously, we've dockerized [crud-mongodb](https://github.com/Albert0i/crud-mongodb) on linux container. Dockerizing on Windows container is such a challenging task due to intrinsic deficiency and subtle incompatibility, and is a far more difficult way to deploy our app.
 
 Few of us ever try or even know of `Windows container`, ie. a kind of container inside which  windows compatible binaries are run. Windows container is such a *niche market* that scarcely no useful resource could be found without tremendous endeavour. Enjoy this fantastic voyage if you are a windows maniac (like me)... 
 
 
 ### I. [Output Options](https://nextjs.org/docs/pages/api-reference/next-config-js/output#automatically-copying-traced-files)
-The whole thing hinges on standalone mode as described in official documentations. 
+The whole thing hinges on `standalone` mode as described in official documentations. 
 
 > Next.js can automatically create a standalone folder that copies only the necessary files for a production deployment including select files in node_modules.
 
