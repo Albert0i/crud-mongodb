@@ -41,9 +41,9 @@ EXPOSE 3000
 ENTRYPOINT ["node", ".next/standalone/server.js"]
 
 # 
-# docker build -t crud-mongodb:1.0 --network "Default Switch" . 
+# docker build -t crud-mongodb:1.0 . 
 #
-# docker run -p 3000:3000 --env-file .env --network "Default Switch" crud-mongodb:1.0 
+# docker run -p 3000:3000 --env-file .env crud-mongodb:1.0 
 # 
 
 #
