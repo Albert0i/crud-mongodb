@@ -246,6 +246,8 @@ ublic static string ProcessIT(string name, string address)
 
 *It is a catch, isn't it?*
 
+[Live demo (vercel)](https://crud-mongodb-one.vercel.app/)
+
 
 ### VII. Reference
 1. [Server Actions: NextJS 13.4's Best New Feature](https://youtu.be/czvSZqnpTHs)
@@ -273,4 +275,4 @@ For example, a Procrustean bed might refer to the insistence on using a particul
 ─── ChatGPT-4 
 
 
-### EOF (2023/07/14)
+### EOF (2023/07/27)
